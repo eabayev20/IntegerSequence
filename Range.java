@@ -6,7 +6,8 @@ public class Range implements IntegerSequence{
       current = start;
   }
   public int length(){
-  return start - end;  }
+  return start - end;
+ }
   public boolean hasNext(){
   return current != end;
  }
