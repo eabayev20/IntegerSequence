@@ -3,8 +3,10 @@ public class ArraySequence implements IntegerSequence{
   private int currentIndex;
   private int []data;
   public ArraySequence (int [] other ) {
+    int i = 0;
     while (other.hasNext()) {
-      data.add(other.hasNext());
+      data[i] = other.next();
+      i = i + 1;
     }
 
   }
