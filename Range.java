@@ -32,13 +32,16 @@ public class Range implements IntegerSequence{
 
   //@throws NoSuchElementException
   public int next(){
-  if (current >= end) {
-    throw new NoSuchElementException("Number " + current + "is the end!");
-  }
-  else {
-    current = current + 1;
-  }
-
+    int temp = current;
+    try{
+      if(current>end){
+        throw new NoSuchElementException("Current must not be greater than end");
+      }
+      current++;
+    }catch(NoSuchElementException e){
+      throw new NoSuchElementException("Current must not be greater than end");
+    }
+     return temp;
   }
 
 }
