@@ -9,7 +9,7 @@ public class ArraySequence implements IntegerSequence{
       data[i] = other[i];
     }
   }
-  
+
 public ArraySequence (IntegerSequence otherseq) {
     l = new int[otherseq.length()];
     for(int i = 0; i < otherseq.length(); i++) {
@@ -27,7 +27,17 @@ public ArraySequence(IntegerSequence otherseq){
     currentIndex=0;
     otherseq.reset();
   }
+  public void reset(){
+      currentIndex = 0;
+    }
+    public int length(){
+      return data.length;
+    }
 
+
+    public boolean hasNext(){
+      return currentIndex < data.length;
+    }
 
 
 }
