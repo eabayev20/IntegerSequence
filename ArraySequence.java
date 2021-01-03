@@ -38,6 +38,17 @@ public ArraySequence(IntegerSequence otherseq){
     public boolean hasNext(){
       return currentIndex < data.length;
     }
-
+    public int next(){
+        int temp = currentIndex;
+        try{
+          if(currentIndex>=data.length){
+            throw new NoSuchElementException("Current must not be greater than end");
+          }
+          currentIndex++;
+        }catch(NoSuchElementException e){
+          throw new NoSuchElementException("Current must not be greater than end");
+        }
+         return data[temp];
+      }
 
 }
