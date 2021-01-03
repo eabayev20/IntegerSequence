@@ -19,14 +19,16 @@ public class Range implements IntegerSequence{
 
   }
   public void reset(){
-      current = start;
+    current = start;
   }
   public int length(){
-  return start - end;
- }
+    return end-start+1;
+  }
+
+  //When current is no longer a valid element in the range, it should return false.
   public boolean hasNext(){
-  return current != end;
- }
+    return(current <=end);
+  }
 
   //@throws NoSuchElementException
   public int next(){
