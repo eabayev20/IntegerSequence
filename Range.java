@@ -35,11 +35,11 @@ public class Range implements IntegerSequence{
     int temp = current;
     try{
       if(current>end){
-        throw new NoSuchElementException("Current must not be greater than end");
+        throw new NoSuchElementException("Value is too high");
       }
       current++;
     }catch(NoSuchElementException e){
-      throw new NoSuchElementException("Current must not be greater than end");
+      throw new NoSuchElementException("Value is too high");
     }
      return temp;
   }

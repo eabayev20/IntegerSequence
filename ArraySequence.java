@@ -14,8 +14,8 @@ public class ArraySequence implements IntegerSequence{
 public ArraySequence(IntegerSequence otherseq){
     otherseq.reset();
     data = new int[otherseq.length()];
-    for(int i =0; i < otherseq.length(); i ++){
-      data[i]=otherseq.next();
+    for (int i =0; i < otherseq.length(); i ++){
+      data[i] = otherseq.next();
     }
     currentIndex=0;
     otherseq.reset();
@@ -31,15 +31,15 @@ public ArraySequence(IntegerSequence otherseq){
     public boolean hasNext(){
       return currentIndex < data.length;
     }
-    public int next(){
+    public int next (){
         int temp = currentIndex;
         try{
           if(currentIndex>=data.length){
-            throw new NoSuchElementException("Current must not be greater than end");
+            throw new NoSuchElementException("Value is too high");
           }
           currentIndex++;
         }catch(NoSuchElementException e){
-          throw new NoSuchElementException("Current must not be greater than end");
+          throw new NoSuchElementException("Value is too high");
         }
          return data[temp];
       }
